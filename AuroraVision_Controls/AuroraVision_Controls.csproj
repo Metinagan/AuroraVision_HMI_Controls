@@ -1,0 +1,389 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5C89C57A-FE24-4DA6-B4B2-FA703092CA2A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AuroraVision_Controls</RootNamespace>
+    <AssemblyName>AuroraVision_Controls</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="HMI">
+      <HintPath>..\..\..\..\..\..\Program Files\Aurora Vision\Aurora Vision Studio 5.5 Lite\HMI.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.WinForms, Version=0.9.7.1, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.WinForms.0.9.7.1\lib\net45\LiveCharts.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Cryptography.Internal, Version=9.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Cryptography.Internal.9.0.0\lib\net462\Microsoft.AspNetCore.Cryptography.Internal.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Cryptography.KeyDerivation, Version=9.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Cryptography.KeyDerivation.9.0.0\lib\net462\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=9.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.9.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="QRCoder, Version=1.6.0.0, Culture=neutral, PublicKeyToken=c4ed5b9ae8358a28, processorArchitecture=MSIL">
+      <HintPath>..\packages\QRCoder.1.6.0\lib\net40\QRCoder.dll</HintPath>
+    </Reference>
+    <Reference Include="SiticoneNetFrameworkUI, Version=2025.2.14.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Siticone.NetFramework.UI.2025.2.14\lib\net48\SiticoneNetFrameworkUI.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.9.0.0\lib\net462\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Pipelines, Version=9.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Pipelines.9.0.0\lib\net462\System.IO.Pipelines.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=9.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.9.0.0\lib\net462\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="websocket-sharp, Version=1.0.2.59611, Culture=neutral, PublicKeyToken=5660b08a1845a91e, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebSocketSharp.1.0.3-rc11\lib\websocket-sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ButtonAçıklama.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ButtonAçıklama.Designer.cs">
+      <DependentUpon>ButtonAçıklama.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Buttons.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Buttons.Designer.cs">
+      <DependentUpon>Buttons.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CameraControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CameraControl.Designer.cs">
+      <DependentUpon>CameraControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cameraView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="cameraView.Designer.cs">
+      <DependentUpon>cameraView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClickDragDrop.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ClickDragDrop.Designer.cs">
+      <DependentUpon>ClickDragDrop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls.cs" />
+    <Compile Include="LastFault.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LastFault.Designer.cs">
+      <DependentUpon>LastFault.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LastFault2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LastFault2.Designer.cs">
+      <DependentUpon>LastFault2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mjpegStream.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="mjpegStream.Designer.cs">
+      <DependentUpon>mjpegStream.cs</DependentUpon>
+    </Compile>
+    <Compile Include="numericUpDownCustom.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="numericUpDownCustom.Designer.cs">
+      <DependentUpon>numericUpDownCustom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="numericUpDownKeyboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="numericUpDownKeyboard.Designer.cs">
+      <DependentUpon>numericUpDownKeyboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pieChart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="pieChart.Designer.cs">
+      <DependentUpon>pieChart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PointChart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PointChart.Designer.cs">
+      <DependentUpon>PointChart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="progressBarH.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="progressBarH.Designer.cs">
+      <DependentUpon>progressBarH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="progressBarRadial.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="progressBarRadial.Designer.cs">
+      <DependentUpon>progressBarRadial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ColorExtensions.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="signalChart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="signalChart.Designer.cs">
+      <DependentUpon>signalChart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="splitContainerCustom.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="splitContainerCustom.Designer.cs">
+      <DependentUpon>splitContainerCustom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="tableLayoutCustom.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="tableLayoutCustom.Designer.cs">
+      <DependentUpon>tableLayoutCustom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="toggleSwitch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="toggleSwitch.Designer.cs">
+      <DependentUpon>toggleSwitch.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ButtonAçıklama.resx">
+      <DependentUpon>ButtonAçıklama.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Buttons.resx">
+      <DependentUpon>Buttons.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CameraControl.resx">
+      <DependentUpon>CameraControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cameraView.resx">
+      <DependentUpon>cameraView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClickDragDrop.resx">
+      <DependentUpon>ClickDragDrop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LastFault.resx">
+      <DependentUpon>LastFault.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LastFault2.resx">
+      <DependentUpon>LastFault2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mjpegStream.resx">
+      <DependentUpon>mjpegStream.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="numericUpDownCustom.resx">
+      <DependentUpon>numericUpDownCustom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="numericUpDownKeyboard.resx">
+      <DependentUpon>numericUpDownKeyboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pieChart.resx">
+      <DependentUpon>pieChart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PointChart.resx">
+      <DependentUpon>PointChart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="progressBarH.resx">
+      <DependentUpon>progressBarH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="progressBarRadial.resx">
+      <DependentUpon>progressBarRadial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="signalChart.resx">
+      <DependentUpon>signalChart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="splitContainerCustom.resx">
+      <DependentUpon>splitContainerCustom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tableLayoutCustom.resx">
+      <DependentUpon>tableLayoutCustom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="toggleSwitch.resx">
+      <DependentUpon>toggleSwitch.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Resources\selected2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Arrow_Left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Arrow_Left30X30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Arrow_Left50X50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Arrow_Left100X100_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Arrow_Right50X50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancel_50X50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ok_50X50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Icons\3d-camera.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Icons\arrows.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Icons\3d-design.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Icons\progressBarH.png" />
+    <EmbeddedResource Include="Icons\progressBarRadial.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Icons\toggleSwitch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Icons\vibration.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Icons\pie-chart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Icons\split.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Icons\tableLayout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zero1.png" />
+    <None Include="Resources\minus1.png" />
+    <None Include="Resources\circle1.png" />
+    <None Include="Resources\enter__1__-_Kopya-removebg-preview1.png" />
+    <None Include="Resources\left-chevron_-_Kopya-removebg-preview1.png" />
+    <Content Include="Resources\number-1.png" />
+    <None Include="Resources\number-11.png" />
+    <Content Include="Resources\number-2.png" />
+    <None Include="Resources\number-21.png" />
+    <Content Include="Resources\number-3.png" />
+    <None Include="Resources\number-31.png" />
+    <Content Include="Resources\number-4.png" />
+    <None Include="Resources\number-41.png" />
+    <Content Include="Resources\number-5.png" />
+    <None Include="Resources\number-51.png" />
+    <Content Include="Resources\number-6.png" />
+    <None Include="Resources\number-61.png" />
+    <Content Include="Resources\number-7.png" />
+    <None Include="Resources\number-71.png" />
+    <Content Include="Resources\number-8.png" />
+    <None Include="Resources\number-81.png" />
+    <Content Include="Resources\number-9.png" />
+    <None Include="Resources\number-91.png" />
+    <None Include="Resources\remove.png" />
+    <Content Include="Resources\zero.png" />
+    <EmbeddedResource Include="Icons\errors.png" />
+    <EmbeddedResource Include="Icons\eye.png" />
+    <EmbeddedResource Include="Icons\hidden.png" />
+    <EmbeddedResource Include="Resources\eye.png" />
+    <EmbeddedResource Include="Resources\hidden.png" />
+    <None Include="Resources\hidden1.png" />
+    <None Include="Resources\eye1.png" />
+    <None Include="Resources\hidden2.png" />
+    <None Include="Resources\eye2.png" />
+    <Content Include="Resources\circle.png" />
+    <Content Include="Resources\enter__1__-_Kopya-removebg-preview.png" />
+    <Content Include="Resources\left-chevron_-_Kopya-removebg-preview.png" />
+    <Content Include="Resources\minus.png" />
+    <Content Include="Resources\noimage.jpeg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
