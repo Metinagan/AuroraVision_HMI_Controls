@@ -1,7 +1,10 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Windows.Forms;
+using AuroraVision_Controls.Properties;
+using System.Windows.Media;
 using HMI;
+using LiveCharts.Wpf;
 
 namespace AuroraVision_Controls
 {
@@ -10,6 +13,8 @@ namespace AuroraVision_Controls
         private float _value;
         private int _decimalPlacesValue = 1;
 
+        private System.Drawing.Color _numpadBackColor = System.Drawing.Color.White;
+
 
         public numericUpDownCustom()
         {
@@ -17,8 +22,6 @@ namespace AuroraVision_Controls
             this.DecimalPlaces = _decimalPlacesValue;
             this.MouseDown += new MouseEventHandler(mouseClick);
             this.Select(this.Text.Length, 0);
-            this.Maximum = 10000; // Maksimum değeri 10000 olarak ayarladık
-            this.Minimum = -10000;
 
         }
 
@@ -35,7 +38,7 @@ namespace AuroraVision_Controls
 
         private void mouseClick(object sender, MouseEventArgs e)
         {
-            using (numericUpDownKeyboard keyboard = new numericUpDownKeyboard(_value))
+            using (numericUpDownKeyboard keyboard = new numericUpDownKeyboard(_value, this.Maximum, this.Minimum,_numpadBackColor))
             {
                 if (keyboard.ShowDialog() == DialogResult.OK)
                 {
@@ -61,6 +64,20 @@ namespace AuroraVision_Controls
                 this.DecimalPlaces = value;
                 this.Invalidate();
                 this.Refresh();
+            }
+        }
+        [HMIBrowsable(true)]
+        [Browsable(true)]
+        [Category("Colors Settings")]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+        [HMI.HMIPortProperty(HMIPortDirection.HiddenInput)]
+        [Description("Numpad Background Color")]
+        public System.Drawing.Color numpadBackColor
+        {
+            get { return _numpadBackColor; }
+            set
+            {
+                _numpadBackColor = value;
             }
         }
     }

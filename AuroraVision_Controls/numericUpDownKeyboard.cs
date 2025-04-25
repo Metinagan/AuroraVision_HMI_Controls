@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Drawing;
+using System.Security.Cryptography.X509Certificates;
 using System.Windows.Forms;
 
 namespace AuroraVision_Controls
@@ -8,6 +10,8 @@ namespace AuroraVision_Controls
         private float _resultValue;
         private bool isNegative = false;
         private bool isFirstInput = true;
+        private decimal _min = 0;
+        private decimal _max = 0;
 
         public bool choseeAll = true;
 
@@ -16,7 +20,7 @@ namespace AuroraVision_Controls
             get { return _resultValue; }
         }
 
-        public numericUpDownKeyboard(float value)
+        public numericUpDownKeyboard(float value,decimal max,decimal min,Color numpadBackColor)
         {
             InitializeComponent();
             this.ControlBox = false;           // Tüm kontrol butonlarını (küçült, büyüt, kapat) gizler
@@ -24,7 +28,16 @@ namespace AuroraVision_Controls
             this.MaximizeBox = false;          // Büyütme butonunu gizler
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
             this.FormBorderStyle = FormBorderStyle.None;
+            textBox1.BackColor = System.Drawing.Color.Black;
 
+            this.BackColor = numpadBackColor;
+
+            _min = min;
+            _max = max;
+            
+            
+
+            label1.Text="Min: " + min.ToString() + "   /   Max: " + max.ToString();
 
             StartPosition = FormStartPosition.CenterParent;
 
@@ -145,7 +158,8 @@ namespace AuroraVision_Controls
 
         private void ResetTextBoxBackground()
         {
-            textBox1.BackColor = System.Drawing.Color.White;
+            textBox1.BackColor = System.Drawing.Color.Black;
+            textBox1.ForeColor = System.Drawing.Color.White;
         }
 
         private void HandleFirstInput()
@@ -160,13 +174,31 @@ namespace AuroraVision_Controls
         private void pictureBoxOnayla(object sender, EventArgs e)
         {
             _resultValue = SafeParse(textBox1.Text);
+
+            // Min ve max kontrolü
+            if (_resultValue < (float)_min)
+            {
+                _resultValue = (float)_min;
+            }
+            else if (_resultValue > (float)_max)
+            {
+                _resultValue = (float)_max;
+            }
+
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
 
+
         private void pictureboxX(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void formload(object sender, EventArgs e)
+        {
+            textBox1.BackColor = System.Drawing.Color.Black;
+            textBox1.ForeColor = System.Drawing.Color.Blue;
         }
     }
 }
