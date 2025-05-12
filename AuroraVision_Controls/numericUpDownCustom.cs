@@ -5,9 +5,12 @@ using AuroraVision_Controls.Properties;
 using System.Windows.Media;
 using HMI;
 using LiveCharts.Wpf;
+using System.Drawing;
 
 namespace AuroraVision_Controls
 {
+    [HMI.HMIToolboxAttribute("S-PrintMachineUI")]
+    [ToolboxBitmap(typeof(CameraContol), "Icons.component.png")]
     public partial class numericUpDownCustom : NumericUpDown
     {
         private float _value;

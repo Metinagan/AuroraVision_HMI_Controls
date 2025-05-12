@@ -144,6 +144,12 @@
       <DependentUpon>ClickDragDrop.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls.cs" />
+    <Compile Include="DynamicTable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DynamicTable.Designer.cs">
+      <DependentUpon>DynamicTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="LastFault.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -217,6 +223,12 @@
     <Compile Include="splitContainerCustom.Designer.cs">
       <DependentUpon>splitContainerCustom.cs</DependentUpon>
     </Compile>
+    <Compile Include="table.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="table.Designer.cs">
+      <DependentUpon>table.cs</DependentUpon>
+    </Compile>
     <Compile Include="tableLayoutCustom.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -245,6 +257,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ClickDragDrop.resx">
       <DependentUpon>ClickDragDrop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DynamicTable.resx">
+      <DependentUpon>DynamicTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LastFault.resx">
       <DependentUpon>LastFault.cs</DependentUpon>
@@ -282,6 +297,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="splitContainerCustom.resx">
       <DependentUpon>splitContainerCustom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="table.resx">
+      <DependentUpon>table.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="tableLayoutCustom.resx">
       <DependentUpon>tableLayoutCustom.cs</DependentUpon>
@@ -350,6 +368,9 @@
     <None Include="Resources\circle1.png" />
     <None Include="Resources\enter__1__-_Kopya-removebg-preview1.png" />
     <None Include="Resources\left-chevron_-_Kopya-removebg-preview1.png" />
+    <EmbeddedResource Include="Icons\table.png" />
+    <EmbeddedResource Include="Icons\component.png" />
+    <EmbeddedResource Include="Icons\grid.png" />
     <Content Include="Resources\number-1.png" />
     <None Include="Resources\number-11.png" />
     <Content Include="Resources\number-2.png" />

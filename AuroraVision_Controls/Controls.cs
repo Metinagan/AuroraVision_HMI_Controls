@@ -28,6 +28,8 @@ namespace AuroraVision_Controls
             types[13] = typeof(PointChart);
             types[14] = typeof(mjpegStream);
             types[15] = typeof(numericUpDownCustom);
+            types[16] = typeof(table);
+            types[17] = typeof(DynamicTable);
 
 
 
