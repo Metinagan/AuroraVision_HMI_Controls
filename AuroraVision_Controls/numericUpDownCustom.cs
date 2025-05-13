@@ -30,7 +30,7 @@ namespace AuroraVision_Controls
 
         private void mouseClick(object sender, MouseEventArgs e)
         {
-            using (numericUpDownKeyboard keyboard = new numericUpDownKeyboard((float)this.Value, this.Maximum, this.Minimum, _numpadBackColor))
+            using (numericUpDownKeyboard keyboard = new numericUpDownKeyboard((float)this.Value, this.Maximum,this.Minimum, this.DecimalPlaces, _numpadBackColor))
             {
                 if (keyboard.ShowDialog() == DialogResult.OK)
                 {

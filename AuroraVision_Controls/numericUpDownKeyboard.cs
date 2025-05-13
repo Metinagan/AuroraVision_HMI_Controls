@@ -21,7 +21,7 @@ namespace AuroraVision_Controls
             get { return _resultValue; }
         }
 
-        public numericUpDownKeyboard(float value,decimal max,decimal min,Color numpadBackColor)
+        public numericUpDownKeyboard(float value,decimal max,decimal min,int decimalPlaces,Color numpadBackColor)
         {
             InitializeComponent();
             this.ControlBox = false;           // Tüm kontrol butonlarını (küçült, büyüt, kapat) gizler
@@ -47,7 +47,7 @@ namespace AuroraVision_Controls
                 textBox1.BackColor = System.Drawing.Color.AliceBlue;
             }
 
-            SetValue(value);
+            SetValue(value,decimalPlaces);
             textBox1.SelectAll();
 
             pictureBox0.Click += (s, e) => { AddDigit("0"); ResetTextBoxBackground(); };
@@ -126,15 +126,21 @@ namespace AuroraVision_Controls
             textBox1.SelectionStart = textBox1.Text.Length;
         }
 
-        private void SetValue(float value)
+        private void SetValue(float value, int decimalPlaces)
         {
             if (value % 1 == 0)
+            {
                 textBox1.Text = ((int)value).ToString();
+            }
             else
-                textBox1.Text = value.ToString("0.000");
+            {
+                string format = "0." + new string('0', decimalPlaces);
+                textBox1.Text = value.ToString(format);
+            }
 
             textBox1.SelectionStart = textBox1.Text.Length;
         }
+
 
         private float SafeParse(string text)
         {
