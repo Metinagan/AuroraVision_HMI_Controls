@@ -12,6 +12,7 @@ namespace AuroraVision_Controls
         private bool isFirstInput = true;
         private decimal _min = 0;
         private decimal _max = 0;
+        private int _increment;
 
         public bool choseeAll = true;
 
@@ -35,7 +36,7 @@ namespace AuroraVision_Controls
             _min = min;
             _max = max;
             
-            
+
 
             label1.Text="Min: " + min.ToString() + "   /   Max: " + max.ToString();
 
@@ -130,7 +131,7 @@ namespace AuroraVision_Controls
             if (value % 1 == 0)
                 textBox1.Text = ((int)value).ToString();
             else
-                textBox1.Text = value.ToString("0.0");
+                textBox1.Text = value.ToString("0.000");
 
             textBox1.SelectionStart = textBox1.Text.Length;
         }

@@ -33,8 +33,6 @@ namespace AuroraVision_Controls
         private List<string> _data = new List<string>();
 
         private Label _mainTitleLabel = new Label();
-        private string _mainTitle = "Başlık";
-
 
         private String _Title = "Başlık";
         private int _TitleHeight = 30;
@@ -52,13 +50,12 @@ namespace AuroraVision_Controls
         {
             this.Controls.Clear();
 
+            //anabaşlık
             _mainTitleLabel.Text = _Title;
             _mainTitleLabel.Font = new Font("Arial", _TitleTextSize, FontStyle.Bold);
             _mainTitleLabel.TextAlign = ContentAlignment.MiddleCenter;
             _mainTitleLabel.ForeColor = _textColor;
             _mainTitleLabel.BackColor = _cellColor;
-           
-
             _mainTitleLabel.Width = _columnCount * (buttonWidth + margin) - margin;
             _mainTitleLabel.Height = _TitleHeight;
             _mainTitleLabel.Location = new Point(0, 0);
@@ -81,6 +78,7 @@ namespace AuroraVision_Controls
                         Name = $"btn_{row}_{col}",
                         Text = $"[{row},{col}]",
                         Font = new Font("Arial", fonstSize),
+                        //colors Settings
                         ButtonBackColor = _cellColor,
                         BorderColor = _borderColor,
                         BorderWidth = _borderWidth,
@@ -89,10 +87,12 @@ namespace AuroraVision_Controls
                         ReadOnlyTextColor = _textColor,
                         DisabledTextColor = _textColor,
                         TextColor = _textColor,
+                        //dokunmayı kapattım
                         IsReadOnly = true,
                     };
-
+                    //ekrana yerleştirdim
                     this.Controls.Add(button);
+                    //diziye ekledim
                     tableCells[row, col] = button;
                 }
             }
@@ -104,7 +104,7 @@ namespace AuroraVision_Controls
         }
         [HMIBrowsable(true)]
         [Browsable(true)]
-        [Category("Title Settings")]
+        [Category("Header Settings")]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         [HMI.HMIPortProperty(HMIPortDirection.HiddenInput)]
         [Description("")]
@@ -120,7 +120,7 @@ namespace AuroraVision_Controls
         }
         [HMIBrowsable(true)]
         [Browsable(true)]
-        [Category("Title Settings")]
+        [Category("Header Settings")]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         [HMI.HMIPortProperty(HMIPortDirection.HiddenInput)]
         [Description("")]
@@ -136,7 +136,7 @@ namespace AuroraVision_Controls
         }
         [HMIBrowsable(true)]
         [Browsable(true)]
-        [Category("Title Settings")]
+        [Category("Header Settings")]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         [HMI.HMIPortProperty(HMIPortDirection.HiddenInput)]
         [Description("")]
@@ -183,21 +183,6 @@ namespace AuroraVision_Controls
             }
         }
 
-        [HMIBrowsable(true)]
-        [Browsable(true)]
-        [Category("Header Settings")]
-        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
-        [HMI.HMIPortProperty(HMIPortDirection.HiddenInput)]
-        [Description("Main Title Text for the Table")]
-        public string MainTitle
-        {
-            get => _mainTitle;
-            set
-            {
-                _mainTitle = value;
-                _mainTitleLabel.Text = value;
-            }
-        }
 
         [HMIBrowsable(true)]
         [Browsable(true)]

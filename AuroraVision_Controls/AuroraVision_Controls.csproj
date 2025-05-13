@@ -168,6 +168,12 @@
     <Compile Include="mjpegStream.Designer.cs">
       <DependentUpon>mjpegStream.cs</DependentUpon>
     </Compile>
+    <Compile Include="nud.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="nud.Designer.cs">
+      <DependentUpon>nud.cs</DependentUpon>
+    </Compile>
     <Compile Include="numericUpDownCustom.cs">
       <SubType>Component</SubType>
     </Compile>
